@@ -8,9 +8,6 @@ fn main() -> AppExit {
 }
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2dBundle::default());
-    commands.spawn(SpriteBundle {
-        texture: asset_server.load("grid_480x270.png"),
-        ..default()
-    });
+    commands.spawn(Camera2d);
+    commands.spawn(Sprite::from_image(asset_server.load("grid_480x270.png")));
 }
